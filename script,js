@@ -1,0 +1,123 @@
+/* ============================================================
+   Smooth Scroll for Internal Navigation
+===============================================================*/
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = this.getAttribute('href');
+    if (target && target.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(target);
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ============================================================
+   Modal System (reads JSON from data-proj attribute)
+===============================================================*/
+(function modalSystem() {
+  const backdrop = document.getElementById('modalBackdrop');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImg = document.getElementById('modalImg');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalLinks = document.getElementById('modalLinks');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(data) {
+    modalTitle.textContent = data.title || '';
+    modalImg.src = data.img || 'https://source.unsplash.com/1200x700/?technology,dark';
+    modalDesc.textContent = data.desc || '';
+
+    modalLinks.innerHTML = '';
+
+    // Live Demo
+    if (data.demo) {
+      const demoBtn = document.createElement('a');
+      demoBtn.href = data.demo;
+      demoBtn.target = "_blank";
+      demoBtn.className = "btn btn-primary";
+      demoBtn.textContent = "Open Demo";
+      modalLinks.appendChild(demoBtn);
+    }
+
+    // Source Code
+    if (data.code) {
+      const codeBtn = document.createElement('a');
+      codeBtn.href = data.code;
+      codeBtn.target = "_blank";
+      codeBtn.className = "btn btn-ghost";
+      codeBtn.textContent = "View Code";
+      modalLinks.appendChild(codeBtn);
+    }
+
+    backdrop.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Bind project cards
+  document.querySelectorAll('.proj').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a') return;
+
+      try {
+        const data = JSON.parse(card.getAttribute('data-proj'));
+        openModal(data);
+      } catch (err) {
+        console.error("Invalid JSON in data-proj:", err);
+      }
+    });
+  });
+
+  // Close modal
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
+
+  function closeModal() {
+    backdrop.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+})();
+
+/* ============================================================
+   Scroll Reveal Animation
+===============================================================*/
+(function scrollReveal() {
+  const revealElements = document.querySelectorAll(
+    '.proj, .hero-right, .hero-left, .section'
+  );
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+          el.style.transition =
+            'opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1)';
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(16px)';
+    observer.observe(el);
+  });
+})();
+
+/* ============================================================
+   Contact Form (Demo Only)
+===============================================================*/
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("Thank you! Your message is recorded (Demo Version).\nTo make it live, connect EmailJS or a backend.");
+    form.reset();
+  });
+}

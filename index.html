@@ -97,16 +97,65 @@
     .proj p{ color:var(--muted); font-size:14px }
     .proj .actions{ margin-top:10px; display:flex; gap:10px; align-items:center }
 
-    /* ================ CERTIFICATES ================ */
-    .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:18px }
-    .cert-card{
-      display:block; background:var(--glass); padding:12px; border-radius:12px; cursor:pointer;
-      transition: transform .22s var(--ease), box-shadow .22s var(--ease); border:1px solid rgba(255,255,255,0.02);
-    }
-    .cert-card:hover{ transform:translateY(-6px); box-shadow: 0 24px 70px rgba(0,0,0,0.45) }
-    .cert-card img{ width:100%; height:180px; object-fit:cover; border-radius:8px; background:#000 }
-    .cert-card .label{ font-weight:800; color:#fff; margin-top:8px }
-    .cert-card p{ color:var(--muted); font-size:13px; margin-top:6px }
+   <!-- CERTIFICATES -->
+<section id="certificates" class="section" aria-label="Certificates">
+  <h2>Certificates</h2>
+  <p class="lead" style="margin-top:6px;color:var(--muted)">Click any certificate — it will open in the same tab.</p>
+
+  <div class="cert-grid" role="list">
+
+    <!-- 1️⃣ Cyber Security Certificate -->
+    <a class="cert-card" href="certificates/certificate (1).jpg" target="_self" role="listitem">
+      <img src="certificates/certificate (1).jpg" alt="Cyber Security Certificate">
+      <div class="label">Cyber Security Certificate</div>
+      <p>Completed government-led cyber security awareness quiz with distinction.</p>
+    </a>
+
+    <!-- 2️⃣ Rashtriya Ekta / Jagrukta -->
+    <a class="cert-card" href="certificates/certificate.jpg" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="Rashtriya Ekta / Jagrukta">
+      <div class="label">Rashtriya Ekta / Jagrukta</div>
+      <p>Recognized for participating in the Rashtriya Ekta & awareness program.</p>
+    </a>
+
+    <!-- 3️⃣ AWS Certificate -->
+    <a class="cert-card" href="certificates/Aws certificate.pdf" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="AWS Certificate">
+      <div class="label">AWS Software Engineering</div>
+      <p>Earned certification for real-world coding simulations and project execution.</p>
+    </a>
+
+    <!-- 4️⃣ Software Engineering Simulation -->
+    <a class="cert-card" href="certificates/Sf eng certification.pdf" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="Software Engineering Simulation">
+      <div class="label">Software Engineering Simulation</div>
+      <p>Earned certification for real-world coding simulations and project execution.</p>
+    </a>
+
+    <!-- 5️⃣ Copilot for Startups -->
+    <a class="cert-card" href="certificates/copilot for startups.pdf" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="Copilot for Startups">
+      <div class="label">Copilot For Startups</div>
+      <p>Earned certification for building tools and workflows using Copilot.</p>
+    </a>
+
+    <!-- 6️⃣ Certificate A -->
+    <a class="cert-card" href="certificates/cetificate.pdf" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="Certificate A">
+      <div class="label">Certificate A</div>
+      <p>Practical training and verified completion.</p>
+    </a>
+
+    <!-- 7️⃣ Certificate B -->
+    <a class="cert-card" href="certificates/cert.pdf" target="_self" role="listitem">
+      <img src="certificates/certificate.jpg" alt="Certificate B">
+      <div class="label">Certificate B</div>
+      <p>Practical training and verified completion.</p>
+    </a>
+
+  </div>
+</section>
+
 
     /* ================ CONTACT / FOOTER ================ */
     footer{ padding:28px; text-align:center; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); margin-top:28px; font-weight:700 }
@@ -408,3 +457,4 @@
   </script>
 </body>
 </html>
+

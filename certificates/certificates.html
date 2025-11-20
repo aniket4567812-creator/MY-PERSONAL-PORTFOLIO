@@ -1,151 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aniket – Certificates</title>
+<meta charset="UTF-8">
+<title>Aniket — Certificates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1220;
-      color: #eaf3ff;
-      margin: 0;
-      padding: 20px;
+        margin: 0;
+        font-family: Inter, Arial;
+        background: #0b1220;
+        color: #eaf3ff;
+        padding: 20px;
     }
 
     h1 {
-      text-align: center;
-      color: #8b63ff;
-      margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #7ee7ff;
+        font-size: 28px;
+    }
+
+    .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .cert-card {
+        display: block;
+        background: rgba(255,255,255,0.05);
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.06);
+        transition: 0.3s;
+    }
+
+    .cert-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 20px rgba(126,231,255,0.1);
+    }
+
+    .cert-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .label {
+        color: #fff;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     p {
-      text-align: center;
-      color: #9fb0c8;
-      margin-bottom: 30px;
+        color: #9fb0c8;
+        font-size: 14px;
+        margin-top: 6px;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 10px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 8px;
-    }
-
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #7ee7ff;
-      margin-bottom: 4px;
-    }
-
-    .desc {
-      font-size: 14px;
-      color: #9fb0c8;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-  </style>
-
+</style>
 </head>
 
 <body>
 
-  <h1>My Certificates</h1>
-  <p>Click any certificate to open it.</p>
+<h1>My Certificates</h1>
 
-  <div class="grid">
+<div class="cert-grid">
 
-    <!-- Cyber Security -->
-    <a href="certificates/certificate (1).jpg" target="_self">
-      <div class="card">
-        <img src="certificates/certificate (1).jpg">
-        <div class="title">Cyber Security Certificate</div>
-        <div class="desc">Government Cyber Awareness Quiz Certificate</div>
-      </div>
+    <!-- 1 -->
+    <a class="cert-card" href="certificate (1).jpg" target="_self">
+        <img src="certificate (1).jpg">
+        <div class="label">Cyber Security Certificate</div>
+        <p>Completed government-led cyber security awareness quiz with distinction.</p>
     </a>
 
-    <!-- Rashtriya Ekta -->
-    <a href="certificates/certificate.jpg" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">Rashtriya Ekta Certificate</div>
-        <div class="desc">Sardar Patel Rashtriya Ekta & Jagrukta Quiz</div>
-      </div>
+    <!-- 2 -->
+    <a class="cert-card" href="certificate.jpg" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">Rashtriya Ekta / Jagrukta</div>
+        <p>Recognized for participating in the Rashtriya Ekta & awareness program.</p>
     </a>
 
-    <!-- AWS -->
-    <a href="certificates/Aws certificate.pdf" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">AWS Certificate</div>
-        <div class="desc">AWS Software Engineering Program</div>
-      </div>
+    <!-- 3 -->
+    <a class="cert-card" href="aws.pdf" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">AWS Software Engineering</div>
+        <p>Real-world coding simulations and project execution.</p>
     </a>
 
-    <!-- Software Engineering -->
-    <a href="certificates/Sf eng certification.pdf" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">Software Engineering Simulation</div>
-        <div class="desc">Coding Simulation & Practical Training</div>
-      </div>
+    <!-- 4 -->
+    <a class="cert-card" href="sf.pdf" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">Software Engineering Simulation</div>
+        <p>Training & verified completion.</p>
     </a>
 
-    <!-- Copilot for Startups -->
-    <a href="certificates/copilot for startups.pdf" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">Copilot for Startups</div>
-        <div class="desc">Workshop on Copilot Tools & Automation</div>
-      </div>
+    <!-- 5 -->
+    <a class="cert-card" href="copilot.pdf" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">Copilot for Startups</div>
+        <p>Certified for building workflows using Copilot.</p>
     </a>
 
-    <!-- Certificate A -->
-    <a href="certificates/cetificate.pdf" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">Certificate A</div>
-        <div class="desc">Verified completion certificate</div>
-      </div>
+    <!-- 6 -->
+    <a class="cert-card" href="CertificateA.pdf" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">Certificate A</div>
+        <p>Verified training completion.</p>
     </a>
 
-    <!-- Certificate B -->
-    <a href="certificates/cert.pdf" target="_self">
-      <div class="card">
-        <img src="certificates/certificate.jpg">
-        <div class="title">Certificate B</div>
-        <div class="desc">Practical training certificate</div>
-      </div>
+    <!-- 7 -->
+    <a class="cert-card" href="CertificateB.pdf" target="_self">
+        <img src="certificate.jpg">
+        <div class="label">Certificate B</div>
+        <p>Practical project training.</p>
     </a>
 
-  </div>
+</div>
 
 </body>
 </html>

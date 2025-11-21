@@ -81,34 +81,69 @@
     .proj h3{ color:#fff; margin:8px 0 6px; font-size:16px }
     .proj p{ color:var(--muted); font-size:14px }
 
-    /* certificates grid - square thumbnails */
-    .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:18px }
-    .cert-card{
-      display:block; background:var(--glass); padding:12px; border-radius:12px; cursor:pointer;
-      transition: transform .22s var(--ease), box-shadow .22s var(--ease); border:1px solid rgba(255,255,255,0.02);
-      text-decoration:none;
-    }
-    .cert-card:hover{ transform:translateY(-6px); box-shadow: 0 24px 70px rgba(0,0,0,0.45) }
-    .thumb {
-      width:100%;
-      aspect-ratio: 16/10;  /* maintains rectangular box; square-like on small thumbnails */
-      background:#000;
-      border-radius:8px;
-      display:block;
-      object-fit:cover;
-    }
-    .cert-card .label{ font-weight:800; color:#fff; margin-top:8px; display:block }
-    .cert-card p{ color:var(--muted); font-size:13px; margin-top:6px }
+    <section id="certificates" class="section">
+    <h2>Certificates</h2>
+    <p>Click a certificate — it will open in the same tab.</p>
 
-    footer{ padding:28px; text-align:center; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); margin-top:28px; font-weight:700 }
+    <div class="cert-grid">
 
-    @media (max-width:720px){
-      nav{ display:none }
-      .hero{ padding:28px 0 }
-      .hero-right{ height:300px }
-    }
-  </style>
-</head>
+        <!-- Certificate 1 -->
+        <div class="cert-card">
+            <a href="certificates/cyber_security_awareness_junior.jpg" target="_blank">
+                <img src="certificates/cyber_security_awareness_junior.jpg" alt="Cyber Security Awareness">
+            </a>
+            <h3>Cyber Security Certificate</h3>
+            <p>Completed government-led cyber security awareness quiz with distinction.</p>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card">
+            <a href="certificates/software-engineering-simulation.jpg" target="_blank">
+                <img src="certificates/software-engineering-simulation.jpg" alt="Software Engineering Simulation">
+            </a>
+            <h3>Software Engineering Simulation</h3>
+            <p>Completed real-world engineering job simulation tasks.</p>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="cert-card">
+            <a href="certificates/aws-devops-professional-training.jpg" target="_blank">
+                <img src="certificates/aws-devops-professional-training.jpg" alt="AWS DevOps Pro">
+            </a>
+            <h3>AWS DevOps Professional</h3>
+            <p>Completed AWS Certified DevOps Engineer - Professional Training.</p>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="cert-card">
+            <a href="certificates/aws_solutions_architecture_job_simulation.jpg" target="_blank">
+                <img src="certificates/aws_solutions_architecture_job_simulation.jpg" alt="AWS Solutions Architect Simulation">
+            </a>
+            <h3>AWS Solutions Architect Simulation</h3>
+            <p>Completed solutions architecture job simulation.</p>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="cert-card">
+            <a href="certificates/copilot_startups.jpg" target="_blank">
+                <img src="certificates/copilot_startups.jpg" alt="Copilot for Startups">
+            </a>
+            <h3>Copilot for Startups</h3>
+            <p>Completed training on building tools & workflows using Copilot.</p>
+        </div>
+
+        <!-- Certificate 6 -->
+        <div class="cert-card">
+            <a href="certificates/Copilot Foundations Certification.jpg" target="_blank">
+                <img src="certificates/Copilot Foundations Certification.jpg" alt="Copilot Foundations">
+            </a>
+            <h3>Copilot Foundations</h3>
+            <p>Completed Microsoft SkillUp Copilot Foundations program.</p>
+        </div>
+
+    </div>
+</section>
+ 
 <body>
   <header>
     <div class="container topbar">
